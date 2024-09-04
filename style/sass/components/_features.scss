@@ -1,0 +1,82 @@
+.features {
+  padding-top: 50px;
+  padding-bottom: 60px;
+  background-color: $main-color;
+}
+.features-parent {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.feature-item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  &::after {
+    content: "";
+    position: absolute;
+    background-color: rgba($color: #fff, $alpha: 0.102);
+    width: 1px;
+    height: 100%;
+    inset-inline-end: 0;
+    top: 0;
+  }
+  .icon {
+    font-size: 22px;
+    color: $main-hover;
+  }
+  .feature-title {
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    margin-top: 15px;
+    margin-bottom: 12px;
+  }
+  .feature-desc  , .phone-num {
+    font-size: 14px;
+    color: #797c94;
+    margin: 0;
+    text-align: center;
+  }
+  .phone-num {
+    transition: color 0.1s linear;
+    &:hover{
+    color: #fff;
+  }
+  }
+  &:last-of-type{
+    &::after{
+        display: none;
+    }
+  }
+}
+
+
+@include max-992 {
+  .features-parent{
+    gap: 30px;
+    grid-template-columns: 1fr 1fr;
+  }
+  .feature-item:nth-of-type(2){
+    &::after{
+      display: none;
+    }
+  }
+  
+}
+
+@include max-768 {
+  .feature-item::after{
+    inset-inline-end: -10px;
+  }
+  .features-parent{
+    gap: 20px;
+    row-gap: 30px;
+  }
+  .features {
+    padding-top: 45px;
+    padding-bottom: 50px;
+  }
+}

@@ -1,0 +1,14 @@
+.translateY-0 {
+  transform: translateY(-30px);
+}
+
+.show-search-box {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  // border-top: 1px solid #cbcbcb;
+}
+.sticky-header {
+  padding: 15px 0;
+  border-color: #e6e6e6;
+}
