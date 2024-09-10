@@ -270,15 +270,19 @@ $(document).ready(function () {
 
   // Footer mobile nav
 
-  $(".footer-item-title").on("click", function () {
-    $(this).siblings(".footer-ul-wrapper").slideToggle(300);
-    $(this).toggleClass("rotate-arrow");
-    $(".footer-item-title")
-      .not(this)
-      .siblings(".footer-ul-wrapper")
-      .slideUp(300);
-    $(".footer-item-title").not(this).removeClass("rotate-arrow");
-  });
+
+  if($(window).width() < 768){
+      $(".footer-item-title").on("click", function () {
+        $(this).siblings(".footer-ul-wrapper").slideToggle(300);
+        $(this).toggleClass("rotate-arrow");
+        $(".footer-item-title")
+          .not(this)
+          .siblings(".footer-ul-wrapper")
+          .slideUp(300);
+        $(".footer-item-title").not(this).removeClass("rotate-arrow");
+      });
+  }
+
 
   // **************************************************************************************************
 });
